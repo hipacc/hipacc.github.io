@@ -7,8 +7,10 @@
     <meta name="description" content="HIPAcc : The Heterogeneous Image Processing Acceleration Framework" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/shThemeDefault.css" rel="stylesheet" type="text/css" />
 
-    <title>HIPAcc</title>
+    <title>HIPA<sup>cc</sup></title>
   </head>
 
   <body>
@@ -18,7 +20,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/hipacc">View on GitHub</a>
 
-          <h1 id="project_title">HIPAcc</h1>
+          <h1 id="project_title">HIPA<sup>cc</sup></h1>
           <h2 id="project_tagline">The Heterogeneous Image Processing Acceleration Framework</h2>
 
         </header>
@@ -28,55 +30,56 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a name="hipacc---the-heterogeneous-image-processing-acceleration-framework" class="anchor" href="#hipacc---the-heterogeneous-image-processing-acceleration-framework"><span class="octicon octicon-link"></span></a>HIPAcc - The Heterogeneous Image Processing Acceleration Framework</h3>
+<a name="hipacc---the-heterogeneous-image-processing-acceleration-framework" class="anchor" href="#hipacc---the-heterogeneous-image-processing-acceleration-framework"><span class="octicon octicon-link"></span></a>HIPA<sup>cc</sup> - The Heterogeneous Image Processing Acceleration Framework</h3>
 
-<p>HIPAcc allows to design image processing kernels and algorithms in a domain-specific language (DSL). From this high-level description, low-level target code for GPU accelerators is generated using source-to-source translation. As back ends, the framework supports CUDA, OpenCL, and Renderscript.</p>
+<p>HIPA<sup>cc</sup> allows to design image processing kernels and algorithms in a domain-specific language (DSL). From this high-level description, low-level target code for GPU accelerators is generated using source-to-source translation. As back ends, the framework supports CUDA, OpenCL, and Renderscript.</p>
 
-<p>HIPAcc allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages. </p>
+<p>HIPA<sup>cc</sup> allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages. </p>
 
-<pre><code>class GaussianFilter : public Kernel&lt;float&gt; {
+<pre class='brush: cpp'>
+class Gaussian : public Kernel<uchar4> {
   private:
-    Accessor&lt;float&gt; &amp;Input;
-    const int size_x, size_y;
+    Accessor<uchar4> &input;
+    Mask<float> &mask;
 
   public:
-    GaussianFilter(IterationSpace&lt;float&gt; &amp;IS, Accessor&lt;float&gt; &amp;Input, const int size_x, const int size_y) :
-      Kernel(IS),
-      Input(Input),
-      size_x(size_x),
-      size_y(size_y)
-    { addAccessor(&amp;Input); }
+    Gaussian(IterationSpace<uchar4> &iter,
+             Accessor<uchar4> &input,
+             Mask<float> &mask)
+            : Kernel(iter), input(input), mask(mask) {
+      addAccessor(&input);
+    }
 
     void kernel() {
-      const int ax = size_x &gt;&gt; 1;
-      const int ay = size_y &gt;&gt; 1;
-      float sum = 0;
-
-      for (int yf = -ay; yf&lt;=ay; yf++) {
-        for (int xf = -ax; xf&lt;=ax; xf++) {
-          float gauss_constant = expf(-1.0f*((xf*xf)/(2.0f*size_x*size_x) + (yf*yf)/(2.0f*size_y*size_y)));
-          sum += gauss_constant*Input(xf, yf);
-        }
-      }
-      output() = sum;
+      float4 sum =
+          convolve(mask, HipaccSUM, [&] () -> float4 {
+            return mask() * convert_float4(input(mask));
+          });
+      output() = convert_uchar4(sum + 0.5f);
     }
 };
-</code></pre>
+</pre>
 
 <h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>The main developers of HIPAcc are Richard Membarth (<a href="https://github.com/richardmembarth" class="user-mention">@richardmembarth</a>) and Oliver Reiche (<a href="https://github.com/oreiche" class="user-mention">@oreiche</a>).</p>
+<p>The main developers of HIPA<sup>cc</sup> are Richard Membarth (<a href="https://github.com/richardmembarth" class="user-mention">@richardmembarth</a>) and Oliver Reiche (<a href="https://github.com/oreiche" class="user-mention">@oreiche</a>).</p>
       </section>
     </div>
 
-    <!-- FOOTER  -->
+    <!-- FOOTER
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
+    -->
 
+  <script src="javascripts/shCore.js"></script>
+    <script src="javascripts/shBrushCpp.js"></script>
+    <script>
+      SyntaxHighlighter.all()
+    </script>
     
 
   </body>
