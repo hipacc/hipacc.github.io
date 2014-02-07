@@ -1,1 +1,83 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="HIPAcc : The Heterogeneous Image Processing Acceleration Framework" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>HIPAcc</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hipacc">View on GitHub</a>
+
+          <h1 id="project_title">HIPAcc</h1>
+          <h2 id="project_tagline">The Heterogeneous Image Processing Acceleration Framework</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="hipacc---the-heterogeneous-image-processing-acceleration-framework" class="anchor" href="#hipacc---the-heterogeneous-image-processing-acceleration-framework"><span class="octicon octicon-link"></span></a>HIPAcc - The Heterogeneous Image Processing Acceleration Framework</h3>
+
+<p>HIPAcc allows to design image processing kernels and algorithms in a domain-specific language (DSL). From this high-level description, low-level target code for GPU accelerators is generated using source-to-source translation. As back ends, the framework supports CUDA, OpenCL, and Renderscript.</p>
+
+<p>HIPAcc allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages. </p>
+
+<pre><code>class GaussianFilter : public Kernel&lt;float&gt; {
+  private:
+    Accessor&lt;float&gt; &amp;Input;
+    const int size_x, size_y;
+
+  public:
+    GaussianFilter(IterationSpace&lt;float&gt; &amp;IS, Accessor&lt;float&gt; &amp;Input, const int size_x, const int size_y) :
+      Kernel(IS),
+      Input(Input),
+      size_x(size_x),
+      size_y(size_y)
+    { addAccessor(&amp;Input); }
+
+    void kernel() {
+      const int ax = size_x &gt;&gt; 1;
+      const int ay = size_y &gt;&gt; 1;
+      float sum = 0;
+
+      for (int yf = -ay; yf&lt;=ay; yf++) {
+        for (int xf = -ax; xf&lt;=ax; xf++) {
+          float gauss_constant = expf(-1.0f*((xf*xf)/(2.0f*size_x*size_x) + (yf*yf)/(2.0f*size_y*size_y)));
+          sum += gauss_constant*Input(xf, yf);
+        }
+      }
+      output() = sum;
+    }
+};
+</code></pre>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>The main developers of HIPAcc are Richard Membarth (<a href="https://github.com/richardmembarth" class="user-mention">@richardmembarth</a>) and Oliver Reiche (<a href="https://github.com/oreiche" class="user-mention">@oreiche</a>).</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
