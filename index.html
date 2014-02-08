@@ -37,15 +37,15 @@
 <p>HIPA<sup>cc</sup> allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages. </p>
 
 <pre class='brush: cpp'>
-class Gaussian : public Kernel<uchar4> {
+class Gaussian : public Kernel&lt;uchar4> {
   private:
-    Accessor<uchar4> &input;
-    Mask<float> &mask;
+    Accessor&lt;uchar4> &input;
+    Mask&lt;float> &mask;
 
   public:
-    Gaussian(IterationSpace<uchar4> &iter,
-             Accessor<uchar4> &input,
-             Mask<float> &mask)
+    Gaussian(IterationSpace&lt;uchar4> &iter,
+             Accessor&lt;uchar4> &input,
+             Mask&lt;float> &mask)
             : Kernel(iter), input(input), mask(mask) {
       addAccessor(&input);
     }
