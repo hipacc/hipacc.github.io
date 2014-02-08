@@ -36,7 +36,7 @@
 
 <p>HIPA<sup>cc</sup> allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages. </p>
 
-<pre class='brush: cpp'>
+<pre class='brush: hipacc'>
 class Gaussian : public Kernel&lt;uchar4> {
   private:
     Accessor&lt;uchar4> &input;
@@ -46,7 +46,7 @@ class Gaussian : public Kernel&lt;uchar4> {
     Gaussian(IterationSpace&lt;uchar4> &iter,
              Accessor&lt;uchar4> &input,
              Mask&lt;float> &mask)
-            : Kernel(iter), input(input), mask(mask) {
+        : Kernel(iter), input(input), mask(mask) {
       addAccessor(&input);
     }
 
@@ -75,8 +75,9 @@ class Gaussian : public Kernel&lt;uchar4> {
     </div>
     -->
 
-  <script src="javascripts/shCore.js"></script>
+    <script src="javascripts/shCore.js"></script>
     <script src="javascripts/shBrushCpp.js"></script>
+    <script src="javascripts/shBrushHipacc.js"></script>
     <script>
       SyntaxHighlighter.all()
     </script>
