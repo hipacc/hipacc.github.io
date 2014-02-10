@@ -157,7 +157,7 @@ p img {
   border: none;
 }
 
-pre, code {
+/*pre, code {
   width: 100%;
   color: #222;
   background-color: #fff;
@@ -186,7 +186,7 @@ code {
 pre code {
   display: block;
   box-shadow: none;
-}
+}*/
 
 blockquote {
   color: #666;

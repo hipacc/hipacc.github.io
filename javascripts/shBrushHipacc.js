@@ -16,7 +16,7 @@ SyntaxHighlighter.brushes.Hipacc = function()
   this.regexList.push(
     { regex: new RegExp(this.getKeywords(datatypes), 'gm'),		css: 'color1 bold' },
     { regex: new RegExp(this.getKeywords(functions), 'gm'),		css: 'functions bold' },
-    { regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword bold' }
+    { regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'color2 bold' }
   );
 };
 
