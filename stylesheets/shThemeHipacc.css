@@ -1,53 +1,34 @@
 /**
- * SyntaxHighlighter
- * http://alexgorbatchev.com/
- *
- * SyntaxHighlighter is donationware. If you are using it, please donate.
- * http://alexgorbatchev.com/wiki/SyntaxHighlighter:Donate
- *
- * @version
- * 2.1.382 (June 24 2010)
- * 
- * @copyright
- * Copyright (C) 2004-2009 Alex Gorbatchev.
- *
- * @license
- * This file is part of SyntaxHighlighter.
- * 
- * SyntaxHighlighter is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * SyntaxHighlighter is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * HIPAcc SyntaxHighlighter theme
+ * http://hipacc.github.io/
  */
+
 /************************************
- * Default Syntax Highlighter theme.
- * 
  * Interface elements.
  ************************************/
 
 .syntaxhighlighter
 {
 	background-color: #373737 !important;
-  padding: 3px !important;
-  padding-top: 6px !important;
-  padding-bottom: 6px !important;
+	padding: 3px !important;
+	padding-top: 6px !important;
+	padding-bottom: 6px !important;
 }
 
-/* Highlighed line number */
+.syntaxhighlighter code
+{
+	font-weight: bold !important;
+	font-family: "Droid Sans Mono", "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+	font-size: 14px !important;
+}
+
+/* Highlighted line number */
 .syntaxhighlighter .line.highlighted .number
 {
 	color: black !important;
 }
 
-/* Highlighed line */
+/* Highlighted line */
 .syntaxhighlighter .line.highlighted.alt1,
 .syntaxhighlighter .line.highlighted.alt2
 {
@@ -57,16 +38,14 @@
 /* Gutter line numbers */
 .syntaxhighlighter .line .number
 {
-  width: 1.8em !important;
+	width: 1.8em !important;
 }
 
 .syntaxhighlighter .line .number code
 {
 	color: #afafaf !important;
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 12px !important;
-  width: 1.7em !important;
+	font-size: 12px !important;
+	width: 1.7em !important;
 }
 
 /* Add border to the lines */
@@ -111,126 +90,80 @@
 
 .syntaxhighlighter .toolbar .item.about
 {
-  display: none !important;
+	display: none !important;
 }
 
 /************************************
  * Actual syntax highlighter colors.
  ************************************/
-.syntaxhighlighter .spaces,
-.syntaxhighlighter .spaces a
-{ 
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
-}
-
 .syntaxhighlighter .plain,
 .syntaxhighlighter .plain a
 { 
 	color: #e0e0e0 !important;
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .comments,
 .syntaxhighlighter .comments a
 { 
 	color: #60b060 !important;
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .string,
 .syntaxhighlighter .string a
 {
 	color: #d07070 !important; 
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .keyword
 { 
 	color: #90b0f0 !important;
 	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .preprocessor 
 { 
 	color: #b0b0b0 !important; 
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .variable 
 { 
 	color: #a70 !important; 
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .value
 { 
 	color: #090 !important; 
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .functions
 { 
 	color: #e0af91 !important; 
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .constants
 { 
 	color: #0066CC !important; 
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .script
 { 
 	background-color: yellow !important;
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .color1,
 .syntaxhighlighter .color1 a
 { 
 	color: #dad4a6 !important; 
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .color2,
 .syntaxhighlighter .color2 a
 { 
 	color: #80c4eb !important;
-  font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
 
 .syntaxhighlighter .color3,
 .syntaxhighlighter .color3 a
 { 
 	color: red !important; 
-	font-weight: bold !important; 
-  font-family: 'Droid Sans Mono', sans-serif !important;
-  font-size: 14px !important;
 }
