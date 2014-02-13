@@ -157,6 +157,7 @@ p img {
   border: none;
 }
 
+/* Do not set code style. This is done by SyntaxHighlighter. */
 /*pre, code {
   width: 100%;
   color: #222;

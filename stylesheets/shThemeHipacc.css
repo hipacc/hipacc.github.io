@@ -9,7 +9,7 @@
 
 .syntaxhighlighter
 {
-	background-color: #373737 !important;
+	background-color: #272727 !important;
 	padding: 3px !important;
 	padding-top: 6px !important;
 	padding-bottom: 6px !important;
@@ -63,18 +63,18 @@
 /* First line */
 .syntaxhighlighter .line.alt1
 {
-	background-color: #373737 !important;
+	background-color: #272727 !important;
 }
 
 /* Second line */
 .syntaxhighlighter .line.alt2
 {
-	background-color: #373737 !important;
+	background-color: #272727 !important;
 }
 
 .syntaxhighlighter .toolbar
 {
-	background-color: #272727 !important;
+	background-color: #000 !important;
 	border: #606060 solid 2px !important;
 }
 
