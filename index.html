@@ -33,11 +33,17 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a name="hipacc---the-heterogeneous-image-processing-acceleration-framework" class="anchor" href="#hipacc---the-heterogeneous-image-processing-acceleration-framework"><span class="octicon octicon-link"></span></a>HIPA<sup>cc</sup> - The Heterogeneous Image Processing Acceleration Framework</h3>
+        <a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h3>
 
-<p>HIPA<sup>cc</sup> allows to design image processing kernels and algorithms in a domain-specific language (DSL). From this high-level description, low-level target code for GPU accelerators is generated using source-to-source translation. As back ends, the framework supports CUDA, OpenCL, and Renderscript.</p>
+        <p>HIPA<sup>cc</sup> allows to design image processing kernels and algorithms in a domain-specific language (DSL). From this high-level description, low-level target code for GPU accelerators is generated using source-to-source translation. As back ends, the framework supports CUDA, OpenCL, and Renderscript.</p>
 
-<p>HIPA<sup>cc</sup> allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages. </p>
+        <div id="center">
+            <p>
+            <img width="600" src="images/hipacc.png" alt="HIPAcc workflow" />
+            </p>
+        </div>
+
+        <p>HIPA<sup>cc</sup> allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages. </p>
 
 <pre class='brush: hipacc'>
 class Gaussian : public Kernel&lt;uchar4> {
