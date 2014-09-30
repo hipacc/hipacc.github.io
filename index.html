@@ -69,7 +69,7 @@ class Gaussian : public Kernel&lt;uchar4> {
 
     void kernel() {
       float4 sum =
-          convolve(mask, HipaccSUM, [&] () -> float4 {
+          convolve(mask, Reduce::SUM, [&] () -> float4 {
             return mask() * convert_float4(input(mask));
           });
       output() = convert_uchar4(sum + 0.5f);
