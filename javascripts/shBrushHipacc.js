@@ -6,12 +6,14 @@ SyntaxHighlighter.brushes.Hipacc = function()
   /* Define HIPAcc datatypes, keywords and functions */
   var datatypes = 'uchar4 ushort4 uint4 char4 short4 int4 float4 double4';
 
-  var keywords = 'Kernel Accessor IterationSpace Image Mask Domain' +
-          'Boundary Interpolate output convolve iterate reduce Reduce::SUM' +
-          'Reduce::MIN Reduce::MAX Reduce::PROD Reduce::MEDIAN';
+  var keywords = 'Image Pyramid Accessor Kernel IterationSpace Mask Domain ' +
+      'BoundaryCondition output convolve reduce iterate traverse ' +
+      'Boundary::MIRROR Boundary::UNDEFINED Boundary::REPEAT Boundary::CONSTANT ' +
+      'Interpolate::NO Interpolate::NN Interpolate::LF Interpolate::CF Interpolate::L3 ' +
+      'Reduce::SUM Reduce::MIN Reduce::MAX Reduce::PROD Reduce::MEDIAN';
 
-  var functions = 'convert_uchar4 convert_ushort4 convert_uint4 convert_char4' +
-          'convert_short4 convert_int4 convert_float4 convert_double4';
+  var functions = 'convert_uchar4 convert_ushort4 convert_uint4 convert_char4 ' +
+      'convert_short4 convert_int4 convert_float4 convert_double4';
 
   this.regexList.push(
     { regex: new RegExp(this.getKeywords(datatypes), 'gm'), css: 'color1 bold' },
