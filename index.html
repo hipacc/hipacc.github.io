@@ -52,17 +52,18 @@
         </div>
 
         <div id="example" class="target">
-          <h3>Example: Gaussian Blur</h3>
+          <h3>Example: Linear Filters</h3>
+          <p>The LinearFilter class shown below can be instantiated with a given filter mask. This will specialize the class for the filter mask such that optimized implementations emerge from the same high-level description. Examples for this filter class are the Gaussian blur filter, the Laplace operator, or the Sobel operator.</p>
 <pre class='brush: hipacc'>
-class Gaussian : public Kernel&lt;uchar4> {
+class LinearFilter : public Kernel&lt;uchar4> {
   private:
     Accessor&lt;uchar4> &input;
     Mask&lt;float> &mask;
 
   public:
-    Gaussian(IterationSpace&lt;uchar4> &iter,
-             Accessor&lt;uchar4> &input,
-             Mask&lt;float> &mask)
+    LinearFilter(IterationSpace&lt;uchar4> &iter,
+                 Accessor&lt;uchar4> &input,
+                 Mask&lt;float> &mask)
         : Kernel(iter), input(input), mask(mask) {
       addAccessor(&input);
     }
