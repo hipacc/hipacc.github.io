@@ -61,13 +61,24 @@
           cmake ../ -DCMAKE_INSTALL_PREFIX=`pwd`/release
           make && make install
           </pre>
-          Note that Xcode and the command line tools are required to build HIPA<sup>cc</sup> on Mac OS X (use xcode-select --install to install command line tools on Mavericks).
+          Note that Xcode and the command line tools are required to build HIPA<sup>cc</sup> on Mac OS X (use xcode-select --install to install command line tools).
           <p>A list of CMake options that are used by HIPA<sup>cc</sup> to find headers and libraries for its various back ends (CUDA, OpenCL, and Renderscript) can be found in the <a href="https://github.com/hipacc/hipacc/blob/master/INSTALL">INSTALL</a> file.</p>
         </div>
 
         <div id="running" class="target">
           <h3>First Run</h3>
           <p>After building and installing HIPA<sup>cc</sup> successfully, you are ready to use HIPA<sup>cc</sup>. To verify that everything is working, generate and execute a program using HIPA<sup>cc</sup>. Go to your installation directory and call <code>make cuda</code>. This translates the source file specified by the <code>TEST_CASE</code> environment variable into a version that runs on the GPU using CUDA and executes it. Similarly, the same program can be translated to OpenCL for different device types (<code>opencl-acc</code>, <code>opencl-cpu</code>, <code>opencl-gpu</code>) as well as standard C++ code (<code>cpu</code>). For execution on Android, Renderscript (<code>renderscript</code>) and Filterscript (<code>filterscript</code>) code can be generated.</p>
+          <pre class='brush: hipacc'>
+          cd hipacc/build/release
+          TEST_CASE=tests/opencv_gaussian_8uc1 make cuda
+          ./main_cuda
+          </pre>
+          <p>For execution on Android devices, the generated binary is configured to store data in <code>/data/local/tmp</code>. The same directory can be used for the binary itself:</p>
+          <pre class='brush: hipacc'>
+          adb shell mkdir -p /data/local/tmp
+          adb push main_renderscript /data/local/tmp
+          adb shell /data/local/tmp/main_renderscript
+          </pre>
         </div>
       </section>
     </div>
