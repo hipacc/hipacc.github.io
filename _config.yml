@@ -1,8 +1,8 @@
-title: HIPAcc
+title: Hipacc
 description: The Heterogeneous Image Processing Acceleration Framework
-google_analytics: 
-show_downloads: true
+google_analytics:
+show_downloads: false
 theme: jekyll-theme-slate
 
-gems:
+plugins:
   - jekyll-mentions
