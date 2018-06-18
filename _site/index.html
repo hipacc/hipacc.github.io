@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=a1af506bc6a6847e97f02e43e36dbd6e3dc6235f">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Overview | Hipacc</title>
+<meta name="generator" content="Jekyll v3.7.3">
+<meta property="og:title" content="Overview">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="A Domain-Specific Language and Compiler for Image Processing">
+<meta property="og:description" content="A Domain-Specific Language and Compiler for Image Processing">
+<link rel="canonical" href="http://0.0.0.0:4000/">
+<meta property="og:url" content="http://0.0.0.0:4000/">
+<meta property="og:site_name" content="Hipacc">
+<script type="application/ld+json">
+{"headline":"Overview","url":"http://0.0.0.0:4000/","name":"Hipacc","description":"A Domain-Specific Language and Compiler for Image Processing","@type":"WebSite","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="/"><img src="/favicon.ico" style="vertical-align:middle;margin:0;padding:0;"></a></li>
+        <li><a href="/#overview">Overview</a></li>
+        <li><a href="/#authors">Authors</a></li>
+        <li><a href="/#publications">Publications</a></li>
+        <li><a href="/install.html">Getting Started</a></li>
+      </ul>
+      <a id="forkme_banner" href="http://github.com/hipacc/hipacc.github.io">View on GitHub</a>
+    </div>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <h1 id="project_title">Hipacc</h1>
+          <h2 id="project_tagline">A Domain-Specific Language and Compiler for Image Processing</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="overview">Overview</h1>
+
+<p>HIPA<sup>cc</sup> allows to design image processing kernels and algorithms in a domain-specific language (DSL). From this high-level description, low-level target code for GPU accelerators is generated using source-to-source translation. As back ends, the framework supports C/C++, CUDA, OpenCL, and Renderscript. There is also a fork of HIPA<sup>cc</sup> that targets <a href="https://github.com/hipacc/hipacc-vivado">Vivado HLS</a>.</p>
+
+<p><img src="/assets/images/hipacc.png" alt="Hipacc" style="width:100%;"></p>
+
+<p>HIPA<sup>cc</sup> allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages.</p>
+
+<h1 id="example-linear-filters">Example: Linear Filters</h1>
+
+<p>The LinearFilter class shown below can be instantiated with a given filter mask. This will specialize the class for the filter mask such that optimized implementations emerge from the same high-level description. Examples for this filter class are the Gaussian blur filter, the Laplace operator, or the Sobel operator.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">class</span> <span class="nc">LinearFilter</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Kernel</span><span class="o">&lt;</span><span class="n">uchar4</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">private</span><span class="o">:</span>
+    <span class="n">Accessor</span><span class="o">&lt;</span><span class="n">uchar4</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">input</span><span class="p">;</span>
+    <span class="n">Mask</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">mask</span><span class="p">;</span>
+
+  <span class="k">public</span><span class="o">:</span>
+    <span class="n">LinearFilter</span><span class="p">(</span><span class="n">IterationSpace</span><span class="o">&lt;</span><span class="n">uchar4</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">iter</span><span class="p">,</span>
+                 <span class="n">Accessor</span><span class="o">&lt;</span><span class="n">uchar4</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">input</span><span class="p">,</span>
+                 <span class="n">Mask</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">mask</span><span class="p">)</span>
+        <span class="o">:</span> <span class="n">Kernel</span><span class="p">(</span><span class="n">iter</span><span class="p">),</span> <span class="n">input</span><span class="p">(</span><span class="n">input</span><span class="p">),</span> <span class="n">mask</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">addAccessor</span><span class="p">(</span><span class="o">&amp;</span><span class="n">input</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">kernel</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">float4</span> <span class="n">sum</span> <span class="o">=</span>
+          <span class="n">convolve</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">Reduce</span><span class="o">::</span><span class="n">SUM</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">float4</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">mask</span><span class="p">()</span> <span class="o">*</span> <span class="n">convert_float4</span><span class="p">(</span><span class="n">input</span><span class="p">(</span><span class="n">mask</span><span class="p">));</span>
+          <span class="p">});</span>
+      <span class="n">output</span><span class="p">()</span> <span class="o">=</span> <span class="n">convert_uchar4</span><span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span></code></pre></figure>
+
+<h1 id="authors">Authors</h1>
+
+<p>The developers of HIPA<sup>cc</sup> are Richard Membarth (<a href="https://github.com/richardmembarth">@richardmembarth</a>) and Oliver Reiche (<a href="https://github.com/oreiche">@oreiche</a>).</p>
+
+<h1 id="publications">Publications</h1>
+
+<h3 id="main-publications">Main Publications</h3>
+
+<p><em>Richard Membarth, Oliver Reiche, Frank Hannig, Jürgen Teich, Mario Körner, and Wieland Eckert</em><br>
+<a href="https://graphics.cg.uni-saarland.de/papers/membarth-2016-tpds.pdf">HIPA<sup>cc</sup>: A Domain-Specific Language and Compiler for Image Processing</a><br>
+In Transactions on Parallel and Distributed Systems (TPDS), 27(1), pp. 210-224, 2016.</p>
+
+<p><em>Oliver Reiche, Mehmet Akif Özkan, Richard Membarth, Jürgen Teich, and Frank Hannig</em><br>
+<a href="https://www12.cs.fau.de/downloads/reiche/publications/ROMTH17.pdf">Generating FPGA-based Image Processing Accelerators with Hipacc</a><br>
+In Proceedings of the International Conference on Computer Aided Design (ICCAD), Irvine, CA, USA, November 13–16, 2017. Invited Paper.</p>
+
+<h3 id="selected-publications">Selected Publications</h3>
+
+<p><em>Oliver Reiche, Christof Kobylko, Frank Hannig, and Jürgen Teich</em><br>
+<a href="https://www12.cs.fau.de/downloads/reiche/autovec">Auto-vectorization for Image Processing DSLs</a><br>
+In Proceedings of the 18th International Conference on Languages, Compilers, Tools, and Theory for Embedded Systems (LCTES), Barcelona, Spain, June 21-22, 2017.</p>
+
+<p><em>Mehmet Akif Özkan, Oliver Reiche, Frank Hannig, and Jürgen Teich</em><br>
+<a href="https://www12.cs.fau.de/downloads/oezkan/publications/fpl16.pdf">FPGA-Based Accelerator Design from a Domain-Specific Language</a><br>
+In Proceedings of the 26th International Conference on Field-Programmable Logic and Applications (FPL), Lausanne, Switzerland, August 29-September 2, 2016.</p>
+
+<p><em>Oliver Reiche, Moritz Schmid, Frank Hannig, Richard Membarth, and Jürgen Teich</em><br>
+<a href="https://www12.cs.fau.de/downloads/reiche/publications/codes14.pdf">Code Generation from a Domain-specific Language for C-based HLS of Hardware Accelerators</a><br>
+In Proceedings of the International Conference on Hardware/Software Codesign and System Synthesis (CODES+ISSS), pp. 17:1-17:10, New Delhi, India, October 12-17, 2014.</p>
+
+<p><em>Richard Membarth, Oliver Reiche, Frank Hannig, and Jürgen Teich</em><br>
+<a href="https://www12.cs.fau.de/publications/membarth/membarth2014cga.pdf">Code Generation for Embedded Heterogeneous Architectures on Android</a><br>
+In Proceedings of the Conference on Design, Automation and Test in Europe (DATE), pp. 86:1-86:6, Dresden, Germany, March 24-28, 2014.</p>
+
+<p><em>Richard Membarth</em><br>
+<a href="http://www.dr.hut-verlag.de/978-3-8439-1074-3.html">Code Generation for GPU Accelerators from a Domain-Specific Language for Medical Imaging</a><br>
+Dissertation, University of Erlangen-Nuremberg, ISBN 978-3-8439-1074-3, Verlag Dr. Hut, Munich, Germany, May 2, 2013.</p>
+
+<p><em>Richard Membarth, Frank Hannig, Jürgen Teich, Mario Körner, and Wieland Eckert</em><br>
+<a href="https://www12.cs.fau.de/publications/membarth/membarth2012gdg.pdf">Generating Device-specific GPU Code for Local Operators in Medical Imaging</a><br>
+In Proceedings of the 26th IEEE International Parallel &amp; Distributed Processing Symposium (IPDPS), pp. 569-581, Shanghai, China, May 21-25, 2012.</p>
+
+<h3 id="overview-poster">Overview Poster</h3>
+
+<p><img src="/assets/images/hipacc_gtc_poster.png" alt="Hipacc" style="width:100%;"></p>
+
+<p><em>Richard Membarth and Oliver Reiche</em><br>
+<a href="http://on-demand.gputechconf.com/gtc/2014/poster/pdf/P4120_domain_compilation_image_processing.pdf">HIPA<sup>cc</sup>: A Domain-Specific Language and Compiler for Image Processing</a><br>
+Poster Presentation at the GPU Technology Conference (GTC), San Jose, CA, USA, March 24-27, 2014.</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright"><a href="https://www.uni-saarland.de/en/footer/dialogue/legal-notice.html">Imprint</a> © 2018. All rights reserved.</p>
+        <!--p class="copyright"><a href="{% link imprint.md %}">Imprint</a> &copy; {{ 'now' | date: '%Y' }}. All rights reserved.</p-->
+        
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

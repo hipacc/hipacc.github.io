@@ -1,0 +1,64 @@
+---
+---
+
+@import "jekyll-theme-slate";
+
+sup {
+    font-size: smaller;
+    vertical-align: super;
+    position: relative;
+}
+
+:target:before {
+  content:"";
+  display:block;
+  height:50px; /* fixed header height*/
+  margin:-50px 0 0; /* negative fixed header height */
+}
+
+/*******************************************************************************
+Navbar Styles
+*******************************************************************************/
+.nav {
+  position: fixed;
+  display: inline;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f2f2f2;
+  z-index: 1000;
+}
+
+.nav ul li:hover > ul {
+  display: block;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.nav ul li {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li:hover a {
+  color: #000000;
+}
+
+.nav ul li a {
+  display: block;
+  padding: 10px 15px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.target {
+  margin-top: -30px;
+  padding-top: 30px;
+}
