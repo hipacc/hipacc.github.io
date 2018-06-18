@@ -6,3 +6,4 @@ theme: jekyll-theme-slate
 
 plugins:
   - jekyll-mentions
+  - jekyll-github-metadata
