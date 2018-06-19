@@ -1,9 +1,9 @@
 title: Hipacc
-repository: hipacc/hipacc
 description: The Heterogeneous Image Processing Acceleration Framework
 google_analytics:
 show_downloads: false
 theme: jekyll-theme-slate
+github_repo_url: https://github.com/hipacc/hipacc
 
 plugins:
   - jekyll-mentions
