@@ -41,6 +41,7 @@ class LinearFilter : public Kernel&lt;uchar4> {
 };
 </pre>
 
+
 # Authors
 
 The developers of HIPA<sup>cc</sup> are Richard Membarth (@richardmembarth) and Oliver Reiche (@oreiche).
