@@ -17,16 +17,16 @@ HIPA<sup>cc</sup> allows programmers to develop imaging applications while provi
 
 The LinearFilter class shown below can be instantiated with a given filter mask. This will specialize the class for the filter mask such that optimized implementations emerge from the same high-level description. Examples for this filter class are the Gaussian blur filter, the Laplace operator, or the Sobel operator.
 
-{% highlight c++ %}
-class LinearFilter : public Kernel<uchar4> {
+<pre class='brush: hipacc; gutter: false'>
+class LinearFilter : public Kernel&lt;uchar4> {
   private:
-    Accessor<uchar4> &input;
-    Mask<float> &mask;
+    Accessor&lt;uchar4> &input;
+    Mask&lt;float> &mask;
 
   public:
-    LinearFilter(IterationSpace<uchar4> &iter,
-                 Accessor<uchar4> &input,
-                 Mask<float> &mask)
+    LinearFilter(IterationSpace&lt;uchar4> &iter,
+                 Accessor&lt;uchar4> &input,
+                 Mask&lt;float> &mask)
         : Kernel(iter), input(input), mask(mask) {
       addAccessor(&input);
     }
@@ -39,8 +39,7 @@ class LinearFilter : public Kernel<uchar4> {
       output() = convert_uchar4(sum + 0.5f);
     }
 };
-{% endhighlight %}
-
+</pre>
 
 # Authors
 
