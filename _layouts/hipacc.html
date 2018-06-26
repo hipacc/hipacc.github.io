@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link href="stylesheets/shCore.css" rel="stylesheet" type="text/css" />
-    <link href="stylesheets/shThemeHipacc.css" rel="stylesheet" type="text/css" />
-    <link href="{{ 'favicon.ico' | relative_url }}" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/assets/css/theme.css">
+    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | relative_url }}">
+    <script src="/assets/js/syntaxhighlighter.min.js"></script>
 
 
 {% seo %}
@@ -55,13 +55,6 @@
         <!--{% raw %}p class="copyright"><a href="{% link imprint.md %}">Imprint</a> &copy; {{ 'now' | date: '%Y' }}. All rights reserved.</p{% endraw %}-->
       </footer>
     </div>
-
-    <script src="javascripts/shCore.js"></script>
-    <script src="javascripts/shBrushCpp.js"></script>
-    <script src="javascripts/shBrushHipacc.js"></script>
-    <script>
-      SyntaxHighlighter.all()
-    </script>
 
     {% if site.google_analytics %}
       <script>
