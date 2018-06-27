@@ -6,11 +6,11 @@ description: A Domain-Specific Language and Compiler for Image Processing
 
 # Overview
 
-HIPA<sup>cc</sup> allows to design image processing kernels and algorithms in a domain-specific language (DSL). From this high-level description, low-level target code for GPU accelerators is generated using source-to-source translation. As back ends, the framework supports C/C++, CUDA, OpenCL, and Renderscript. There is also a fork of HIPA<sup>cc</sup> that targets [Vivado HLS](https://github.com/hipacc/hipacc-vivado).
+Hipacc allows to design image processing kernels and algorithms in a domain-specific language (DSL). From this high-level description, low-level target code for GPU accelerators is generated using source-to-source translation. As back ends, the framework supports C/C++, CUDA, OpenCL, and Renderscript. There is also a fork of Hipacc that targets [FPGAs](https://github.com/hipacc/hipacc-fpga).
 
 <img src="/assets/images/hipacc.png" alt="Hipacc" style="width:100%;"/>
 
-HIPA<sup>cc</sup> allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages.
+Hipacc allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages.
 
 
 # Example: Linear Filters
@@ -44,7 +44,7 @@ class LinearFilter : public Kernel&lt;uchar4> {
 
 # Authors
 
-The developers of HIPA<sup>cc</sup> are Richard Membarth (@richardmembarth) and Oliver Reiche (@oreiche).
+The developers of Hipacc are Richard Membarth (@richardmembarth), Oliver Reiche (@oreiche), Mehmet Akif Özkan (@akifoezkan), and Bo Qiao (@qiao-bo).
 
 
 # Publications
