@@ -28,7 +28,7 @@ class LinearFilter : public Kernel&lt;uchar4> {
                  Accessor&lt;uchar4> &input,
                  Mask&lt;float> &mask)
         : Kernel(iter), input(input), mask(mask) {
-      addAccessor(&input);
+      add_accessor(&input);
     }
 
     void kernel() {
