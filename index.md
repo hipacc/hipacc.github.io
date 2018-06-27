@@ -8,7 +8,7 @@ description: A Domain-Specific Language and Compiler for Image Processing
 
 Hipacc allows to design image processing kernels and algorithms in a domain-specific language (DSL). From this high-level description, low-level target code for GPU accelerators is generated using source-to-source translation. As back ends, the framework supports C/C++, CUDA, OpenCL, and Renderscript. There is also a fork of Hipacc that targets [FPGAs](https://github.com/hipacc/hipacc-fpga).
 
-<img src="/assets/images/hipacc.png" alt="Hipacc" style="width:100%;"/>
+<img src="/assets/images/hipacc.png" alt="Hipacc" style="box-shadow: none; width: 100%; max-width: 780px; margin: 10px 0 10px 0;" />
 
 Hipacc allows programmers to develop imaging applications while providing high productivity, flexibility and portability as well as competitive performance: the same algorithm description serves as basis for targeting different GPU accelerators and low-level languages.
 
