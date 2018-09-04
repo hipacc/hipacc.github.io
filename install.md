@@ -24,7 +24,7 @@ HIPA<sup>cc</sup> works only with the release version of Clang/LLVM listed in [d
 
 # Installation
 
-The build system of HIPA<sup>cc</sup> uses CMake (3.1 or later) and requires installation to an absolute path:
+The build system of HIPA<sup>cc</sup> uses CMake (3.4.3 or later), Git (2.7 or later) and requires installation to an absolute path:
 ```bash
 cd hipacc
 mkdir build && cd build
