@@ -70,7 +70,7 @@ _Mehmet Akif Özkan, Oliver Reiche, Frank Hannig, and Jürgen Teich_
 In Proceedings of the 26th International Conference on Field-Programmable Logic and Applications (FPL), Lausanne, Switzerland, August 29-September 2, 2016.
 
 _Oliver Reiche, Moritz Schmid, Frank Hannig, Richard Membarth, and Jürgen Teich_  
-[Code Generation from a Domain-specific Language for C-based HLS of Hardware Accelerators](https://www12.cs.fau.de/downloads/reiche/publications/codes14.pdf)  
+[Code Generation from a Domain-specific Language for C-based HLS of Hardware Accelerators](https://www12.cs.fau.de/downloads/reiche/publications/RSHMT14.pdf)  
 In Proceedings of the International Conference on Hardware/Software Codesign and System Synthesis (CODES+ISSS), pp. 17:1-17:10, New Delhi, India, October 12-17, 2014.
 
 _Richard Membarth, Oliver Reiche, Frank Hannig, and Jürgen Teich_  
