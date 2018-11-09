@@ -37,7 +37,7 @@ Detailed install instructions for GNU/Linux, macOS, and Windows can be found in 
 
 # First Run
 
-After building and installing HIPA<sup>cc</sup> successfully, you are ready to use HIPA<sup>cc</sup>. To verify that everything is working, generate and execute a program using HIPA<sup>cc</sup>. Go to your installation directory and change to the sample directory of the application you want to build. Call make cuda. This translates the source file into a version that runs on the GPU using CUDA and executes it. Similarly, the same program can be translated to OpenCL for different device types (, opencl-cpu, opencl-gpu) as well as standard C++ code (cpu). For execution on Android, Renderscript (renderscript) and Filterscript (filterscript) code can be generated.
+After building and installing HIPA<sup>cc</sup> successfully, you are ready to use HIPA<sup>cc</sup>. To verify that everything is working, generate and execute a program using HIPA<sup>cc</sup>. Go to your installation directory and change to the sample directory of the application you want to build. Call make cuda. This translates the source file into a version that runs on the GPU using CUDA and executes it. Similarly, the same program can be translated to OpenCL for different device types (opencl-acc, opencl-cpu, opencl-gpu) as well as standard C++ code (cpu). For execution on Android, Renderscript (renderscript) and Filterscript (filterscript) code can be generated.
 ```bash
 cd hipacc/build/release
 cd samples/0_Point_Operators/Color_Conversion
