@@ -61,6 +61,10 @@ In Proceedings of the International Conference on Computer Aided Design (ICCAD),
 
 ### Selected Publications
 
+_Bo Qiao, Olver Reiche, Frank Hannig, and Jürgen Teich_  
+[From Loop Fusion to Kernel Fusion: A Domain-specific Approach to Locality Optimization](https://ieeexplore.ieee.org/document/8661176)  
+In Proceedings of the 2019 IEEE/ACM International Symposium on Code Generation and Optimization (CGO), pp. 242-253, Washington, DC, USA, February 16-20, 2019.
+
 _Oliver Reiche_  
 [A Domain-Specific Language Approach for Designing and Programming Heterogeneous Image Systems](https://www.dr.hut-verlag.de/978-3-8439-3726-9.html)  
 Dissertation, University of Erlangen-Nuremberg, pp. 1-215, ISBN 978-3-8439-3726-9, Verlag Dr. Hut, Munich, Germany, July 5, 2018.
