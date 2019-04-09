@@ -61,6 +61,10 @@ In Proceedings of the International Conference on Computer Aided Design (ICCAD),
 
 ### Selected Publications
 
+_Oliver Reiche_  
+[A Domain-Specific Language Approach for Designing and Programming Heterogeneous Image Systems](https://www.dr.hut-verlag.de/978-3-8439-3726-9.html)  
+Dissertation, University of Erlangen-Nuremberg, pp. 1-215, ISBN 978-3-8439-3726-9, Verlag Dr. Hut, Munich, Germany, July 5, 2018.
+
 _Oliver Reiche, Christof Kobylko, Frank Hannig, and Jürgen Teich_  
 [Auto-vectorization for Image Processing DSLs](https://www12.cs.fau.de/downloads/reiche/autovec)  
 In Proceedings of the 18th International Conference on Languages, Compilers, Tools, and Theory for Embedded Systems (LCTES), pp. 21-30, Barcelona, Spain, June 21-22, 2017.
