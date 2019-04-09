@@ -78,8 +78,8 @@ _Richard Membarth, Oliver Reiche, Frank Hannig, and Jürgen Teich_
 In Proceedings of the Conference on Design, Automation and Test in Europe (DATE), pp. 86:1-86:6, Dresden, Germany, March 24-28, 2014.
 
 _Richard Membarth_  
-[Code Generation for GPU Accelerators from a Domain-Specific Language for Medical Imaging](http://www.dr.hut-verlag.de/978-3-8439-1074-3.html)  
-Dissertation, University of Erlangen-Nuremberg, ISBN 978-3-8439-1074-3, Verlag Dr. Hut, Munich, Germany, May 2, 2013.
+[Code Generation for GPU Accelerators from a Domain-Specific Language for Medical Imaging](https://www.dr.hut-verlag.de/978-3-8439-1074-3.html)  
+Dissertation, University of Erlangen-Nuremberg, pp. 1-215, ISBN 978-3-8439-1074-3, Verlag Dr. Hut, Munich, Germany, May 2, 2013.
 
 _Richard Membarth, Frank Hannig, Jürgen Teich, Mario Körner, and Wieland Eckert_  
 [Generating Device-specific GPU Code for Local Operators in Medical Imaging](https://www12.cs.fau.de/publications/membarth/membarth2012gdg.pdf)  
