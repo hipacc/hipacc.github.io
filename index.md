@@ -57,17 +57,17 @@ In Transactions on Parallel and Distributed Systems (TPDS), 27(1), pp. 210-224, 
 
 _Oliver Reiche, Mehmet Akif Özkan, Richard Membarth, Jürgen Teich, and Frank Hannig_  
 [Generating FPGA-based Image Processing Accelerators with Hipacc](https://www12.cs.fau.de/downloads/reiche/publications/ROMTH17.pdf)  
-In Proceedings of the International Conference on Computer Aided Design (ICCAD), Irvine, CA, USA, November 13–16, 2017. Invited Paper.
+In Proceedings of the International Conference on Computer Aided Design (ICCAD), pp. 1026-1033, Irvine, CA, USA, November 13–16, 2017. Invited Paper.
 
 ### Selected Publications
 
 _Oliver Reiche, Christof Kobylko, Frank Hannig, and Jürgen Teich_  
 [Auto-vectorization for Image Processing DSLs](https://www12.cs.fau.de/downloads/reiche/autovec)  
-In Proceedings of the 18th International Conference on Languages, Compilers, Tools, and Theory for Embedded Systems (LCTES), Barcelona, Spain, June 21-22, 2017.
+In Proceedings of the 18th International Conference on Languages, Compilers, Tools, and Theory for Embedded Systems (LCTES), pp. 21-30, Barcelona, Spain, June 21-22, 2017.
 
 _Mehmet Akif Özkan, Oliver Reiche, Frank Hannig, and Jürgen Teich_  
 [FPGA-Based Accelerator Design from a Domain-Specific Language](https://www12.cs.fau.de/downloads/oezkan/publications/fpl16.pdf)  
-In Proceedings of the 26th International Conference on Field-Programmable Logic and Applications (FPL), Lausanne, Switzerland, August 29-September 2, 2016.
+In Proceedings of the 26th International Conference on Field-Programmable Logic and Applications (FPL), pp. 1-9, Lausanne, Switzerland, August 29-September 2, 2016.
 
 _Oliver Reiche, Moritz Schmid, Frank Hannig, Richard Membarth, and Jürgen Teich_  
 [Code Generation from a Domain-specific Language for C-based HLS of Hardware Accelerators](https://www12.cs.fau.de/downloads/reiche/publications/RSHMT14.pdf)  
