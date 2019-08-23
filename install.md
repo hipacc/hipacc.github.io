@@ -19,7 +19,7 @@ HIPA<sup>cc</sup> is a source-to-source compiler based on Clang/LLVM. To build H
 * [libc++abi](https://libcxxabi.llvm.org) (on GNU/Linux when using Clang as target compiler)
 * [polly](https://polly.llvm.org) (optional)
 
-HIPA<sup>cc</sup> works only with the release version of Clang/LLVM listed in [dependencies.sh](https://github.com/hipacc/hipacc/blob/master/dependencies.sh), which corresponds to the current Clang/LLVM 6.0 release version.
+HIPA<sup>cc</sup> works only with the release version of Clang/LLVM listed in [dependencies.sh](https://github.com/hipacc/hipacc/blob/master/dependencies.sh), which corresponds to the current Clang/LLVM 8.0 release version.
 
 
 # Installation
